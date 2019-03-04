@@ -1,0 +1,25 @@
+<div class="listmatieres">
+  <h2>Liste des matières: </h2>
+  <div *ngFor="let matiere of matieres" (click)="onSelect(matiere)" class="boxmatiere" [ngClass]="{'selected':selectedMatiere===matiere}">
+          
+       
+              <span>{{matiere.name}}</span>
+  </div>         
+  Ajouter une matière  : <br>
+   <label>Titre</label>: <input type="text" placeholder="titre"><br>
+   <label>Durée du programme</label>: <input type="text" placeholder="duree programme"><br>
+   <label>Objectifs</label>: <input type="text" placeholder="objectifs"><br>
+   <label>Prérequis</label>: <input type="text" placeholder="prerequis"><br>
+   <label>Contenu</label>: <input type="text" placeholder="contenu"><br>
+   <label>Formateur</label>: <input type="text" placeholder="formateur"><br>
+   <label>Niveau</label>: <input type="text" placeholder="niveau"><br>
+
+   <p>Promotion concernée :</p><select >
+      <option value="">--Merci de choisir une option--</option>
+      <option value="energie">Energie</option>
+      <option value="gestionProjet">Gestion de projets</option>
+      <option value="cloud">Cloud</option>
+      </select> &nbsp;
+   <button (click)="submit()">Ajouter</button>
+ 
+</div>

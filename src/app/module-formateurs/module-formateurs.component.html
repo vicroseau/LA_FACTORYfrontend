@@ -1,0 +1,10 @@
+<div class="listformateurs">
+    <h2>Liste des formateurs: </h2>
+    <div *ngFor="let formateur of formateurs" (click)="onSelect(formateur)" class="boxformateur"
+        [ngClass]="{'selected':selectedFormateur===formateur}">
+        <span>{{formateur.name}}</span> ; <span>{{formateur.competence}}</span> </div>
+       
+    <!-- <div class="ajoutForm"><app-ajoutcomp [formateur]="selectedFormateur"></app-ajoutcomp></div> -->
+
+
+</div>

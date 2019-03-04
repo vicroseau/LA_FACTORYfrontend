@@ -1,0 +1,23 @@
+
+<div class="container">
+  <h1>
+  Gestionnaire de Formation
+  </h1>
+
+<div class="gridContainer" *ngIf="!showAll" >
+  <div (click)="onSelMtr()">Gestion des Matières</div>
+  <div (click)="onSelForm()">Gestion des Formateurs</div>
+  <div (click)="onSelPla()">Gestion des Plannings</div>  
+  <div (click)="onSelMtl()">Gestion du Matériel</div>
+  <div (click)="onSelSal()">Gestion des Salles</div>
+  <div (click)="onSelRes()">Restitution</div>  
+</div>
+<button class="retour" *ngIf="showAll" (click)="onSel()">Retour</button>
+</div>
+<app-module-formateurs *ngIf="show"  ></app-module-formateurs>
+<app-module-matieres *ngIf="show1"></app-module-matieres>
+<app-module-salles *ngIf="show4"></app-module-salles>
+<app-module-plannings *ngIf="show3"></app-module-plannings>
+<app-module-materiel *ngIf="show2"></app-module-materiel>
+<app-module-restitution *ngIf="show5"></app-module-restitution>
+<router-outlet></router-outlet>
