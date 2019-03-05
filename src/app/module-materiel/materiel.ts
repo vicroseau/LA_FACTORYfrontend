@@ -3,11 +3,11 @@ export class Salle {
     cout: number;
     isDispo: boolean;
     capacite: number;
-
+    name: string;
 }
 
-export class Ordinateur {
-    code: number;
+ export class Ordinateur {
+  code: number;
     cout: number;
     isDispo: boolean;
     processeur: string;
@@ -17,10 +17,10 @@ export class Ordinateur {
     stagiaire: string;
 
 }
-export class Projo {
+export class Projecteur {
     code: number;
     cout: number;
     isDispo: boolean;
     resolution: string;
-    
-}
+
+} 

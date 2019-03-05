@@ -1,16 +1,15 @@
-<head>Access-Control-Allow-Origin: *</head>
+
 
 <div class="listmateriel">
     <h2>Liste des salles: </h2>
-    <div *ngFor="let materiel of materiels" (click)="onSelect(materiel)" class="materielbox"
+    <div *ngFor="let salle of salles" (click)="onSelectSalle(salle)" class="materielbox"
         [ngClass]="{'selected':selectedMateriel===materiel}">
-
-        {{salle.code}}, {{salle.cout}}, {{salle.isDispo}}
+        {{salle.code}}
     </div>
 </div>
-<div class="listmateriel">
+ <div class="listmateriel">
     <h2>Liste des ordinateurs: </h2>
-    <div *ngFor="let materiel of materiels" (click)="onSelect(materiel)" class="materielbox"
+    <div *ngFor="let ordinateur of ordinateurs" (click)="onSelectOrdi(ordinateur)" class="materielbox"
         [ngClass]="{'selected':selectedMateriel===materiel}">
 
         {{ordinateur.code}}, {{ordinateur.cout}}, {{ordinateur.isDispo}}
@@ -18,10 +17,10 @@
 </div>
 <div class="listmateriel">
     <h2>Liste des projecteurs: </h2>
-    <div *ngFor="let materiel of materiels" (click)="onSelect(materiel)" class="materielbox"
+    <div *ngFor="let projecteur of projecteurs" (click)="onSelectPro(projos)" class="materielbox"
         [ngClass]="{'selected':selectedMateriel===materiel}">
 
-        {{projo.code}}, {{projo.cout}}, {{projo.isDispo}}
+        {{projecteur.code}}, {{projecteur.cout}}, {{projecteur.isDispo}}
     </div>
 
-</div>
+</div> 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MaterielService} from './module-materiel.service'
-import {Salle, Ordinateur, Projo} from './materiel';
+import {Salle,  Ordinateur, Projecteur} from './materiel';
 
 @Component({
   selector: 'app-module-materiel',
@@ -11,10 +11,10 @@ export class ModuleMaterielComponent implements OnInit {
 
 salles;
 ordinateurs;
-projos;
+projecteurs;
 selectedSalle: Salle;
 selectedOrdinateur: Ordinateur;
-selectedProjo: Projo;
+selectedProjecteur: Projecteur;
 
   constructor(private materielService: MaterielService) { }
 
@@ -22,30 +22,30 @@ selectedProjo: Projo;
   
 this.getSalles();
 this.getOrdinateurs();
-this.getProjos();
+this.getProjecteurs();
   }
   onSelectSalle(salle: Salle): void{
     this.selectedSalle=salle;
     
   }
-  onSelectOrdi(ordinateur: Ordinateur): void{
+onSelectOrdi(ordinateur: Ordinateur): void{
     this.selectedOrdinateur=ordinateur;
     
   }
-  onSelectPro(projo: Projo): void{
-    this.selectedProjo=projo;
+  onSelectPro(projecteur: Projecteur): void{
+    this.selectedProjecteur=projecteur;
     
-  }
+  } 
   getSalles(): void{
     this.materielService.getSalle()
         .subscribe(salle => this.salles = salle);
   }
-  getOrdinateurs(): void{
+   getOrdinateurs(): void{
     this.materielService.getOrdinateur()
         .subscribe(ordinateur => this.ordinateurs = ordinateur);
   }
-  getProjos(): void{
-    this.materielService.getProjo()
-        .subscribe(projo => this.projos = projo);
-  }
+  getProjecteurs(): void{
+    this.materielService.getProjecteur()
+        .subscribe(projecteur => this.projecteurs = projecteur);
+  } 
 }
