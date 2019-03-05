@@ -1,0 +1,23 @@
+div.materielbox, div.listmateriel {
+  
+    border: 1px solid black;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+.materielbox:hover{
+    background: rgba(17, 212, 238, 0.356);
+    cursor: pointer
+}
+h2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+h2{color: black;
+    font-weight: bold;
+    font-size: 150%;   
+}
+.materielbox.selected{
+    background-color:  rgba(17, 212, 238, 0.356);
+}
