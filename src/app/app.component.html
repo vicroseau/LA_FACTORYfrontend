@@ -1,26 +1,27 @@
 <html>
 
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 <div class="container">
+  <div class="titre">
   <h2>
-  Gestionnaire de Formation
+    Gestionnaire de Formation
   </h2>
+</div>
+  <div class="gridContainer" *ngIf="!showAll">
+    <div [routerLink]="['/matieres']" (click)="onSel2()">Gestion des Matières</div>
+    <div [routerLink]="['/formateurs']" (click)="onSel2()">Gestion des Formateurs</div>
+    <div [routerLink]="['/plannings']" (click)="onSel2()">Gestion des Plannings</div>
+    <div [routerLink]="['/materiel']" (click)="onSel2()">Gestion du Matériel</div>
+    <div [routerLink]="['/salles']" (click)="onSel2()">Gestion des Salles</div>
+    <div [routerLink]="['/restitution']" (click)="onSel2()">Restitution</div>
+  </div>
+  <router-outlet></router-outlet>
 
-<div class="gridContainer" *ngIf="!showAll" >
-  <div (click)="onSelMtr()">Gestion des Matières</div>
-  <div (click)="onSelForm()">Gestion des Formateurs</div>
-  <div (click)="onSelPla()">Gestion des Plannings</div>  
-  <div (click)="onSelMtl()">Gestion du Matériel</div>
-  <div (click)="onSelSal()">Gestion des Salles</div>
-  <div (click)="onSelRes()">Restitution</div>  
+  <button type="button" class="btn btn-primary" [routerLink]="['/home']" *ngIf="showAll"
+    (click)="onSel2()">Retour</button>
 </div>
-<button class="retour" *ngIf="showAll" (click)="onSel()">Retour</button>
-</div>
-<app-module-formateurs *ngIf="show"  ></app-module-formateurs>
-<app-module-matieres *ngIf="show1"></app-module-matieres>
-<app-module-salles *ngIf="show4"></app-module-salles>
-<app-module-plannings *ngIf="show3"></app-module-plannings>
-<app-module-materiel *ngIf="show2"></app-module-materiel>
-<app-module-restitution *ngIf="show5"></app-module-restitution>
-<router-outlet></router-outlet>
 
 </html>

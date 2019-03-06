@@ -24,30 +24,10 @@ onSel(){
   location.reload();
 
 }
+onSel2() {
+ 
+  this.showAll = !this.showAll;
+}
 
-  onSelForm() {
-    this.show = !this.show;
-    this.showAll = !this.showAll;
-  }
-  onSelMtr() {
-    this.show1 = !this.show1;
-    this.showAll = !this.showAll;
-  }
-  onSelMtl() {
-    this.show2 = !this.show2;
-    this.showAll = !this.showAll;
-  }
-  onSelPla() {
-    this.show3 = !this.show3;
-    this.showAll = !this.showAll;
-  }
-  onSelSal() {
-    this.show4 = !this.show4;
-    this.showAll = !this.showAll;
-  }
-  onSelRes() {
-    this.show5 = !this.show5;
-    this.showAll = !this.showAll;
-  }
-
+ 
 }

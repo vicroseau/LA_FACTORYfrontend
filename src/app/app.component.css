@@ -10,8 +10,12 @@ html {
 
 div.container{text-align: center;
    height:100vh;
-   
+  
     
+}
+div.titre{
+    height: 20vh;
+   line-height: 100px;
 }
 h2{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -22,12 +26,11 @@ h2{
 
 div.gridContainer{
  
-    margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 2fr);
     grid-template-rows: repeat(3, 2fr);
     grid-gap: 50px;
-    width: 90vw;
+    width: 70vw;
     height: 90vh
   
 }
