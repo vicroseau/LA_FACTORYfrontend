@@ -1,0 +1,62 @@
+<div class="listmateriel">
+  <h2>Liste des ordinateurs: </h2>
+  <div *ngFor="let ordinateur of ordinateurs" (click)="onSelectOrdi(ordinateur)" class="materielbox"
+      [ngClass]="{'selected':selectedMateriel===materiel}">
+
+      {{ordinateur.code}}, {{ordinateur.cout}}, {{ordinateur.isDispo}}
+  </div>
+</div>
+
+<!-- Ajouter la methode addOrdinateur -->
+<form (ngSubmit)="addOrdinateur()" >
+  <div class="form-group">
+    <label for="cout">Coût</label>
+    <input type="number" class="form-control" id="cout" required
+    [(ngModel)]="ordinateur.cout" name="cout" min="0" >
+  </div>
+  
+  <div class="form-group">
+    <label for="isDispo">Disponible</label>
+    <select name="isDispo" [(ngModel)]="ordinateur.isDispo" class="form-control" required>
+      <option value="TRUE">oui</option>
+      <option value="FALSE">non</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="processeur">Processeur</label>
+    <input type="text" class="form-control" required
+    [(ngModel)]="ordinateur.processeur" name="processeur">
+  </div>
+
+  <div class="form-group">
+    <label for="ram">RAM</label>
+    <input type="number" class="form-control" required
+    [(ngModel)]="ordinateur.ram" name="ram" min="0" >
+  </div>
+
+  <div class="form-group">
+    <label for="hdd">HDD</label>
+    <input type="number" class="form-control" required
+    [(ngModel)]="ordinateur.hdd" name="hdd" min="0" >
+  </div>
+
+  <div class="form-group">
+    <label for="annee">Année</label>
+    <input type="number" class="form-control" required
+    [(ngModel)]="ordinateur.annee" name="annee" min="1950" >
+  </div>
+
+  <div class="btn-group btn-group-sm">
+    <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+    <button type="submit" class="btn btn-dark">Ajouter</button>
+ </div>
+  
+</form>
+
+
+
+
+
+
+<a href="accueil" class="btn btn-primary" >Accueil</a>

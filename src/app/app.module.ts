@@ -12,6 +12,10 @@ import { ModuleMaterielComponent } from './module-materiel/module-materiel.compo
 import { ModuleSallesComponent } from './module-salles/module-salles.component';
 import { ModuleRestitutionComponent } from './module-restitution/module-restitution.component';
 import { AjoutcompComponent } from './module-formateurs/ajoutcomp/ajoutcomp.component';
+import { AddOrdinateurComponent } from './module-materiel/ordinateur/add-ordinateur/add-ordinateur.component';
+import { ListOrdinateurComponent } from './module-materiel/ordinateur/list-ordinateur/list-ordinateur.component';
+import { DetailOrdinateurComponent } from './module-materiel/ordinateur/detail-ordinateur/detail-ordinateur.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { AjoutcompComponent } from './module-formateurs/ajoutcomp/ajoutcomp.comp
     ModuleMaterielComponent,
     ModuleSallesComponent,
     ModuleRestitutionComponent,
-    AjoutcompComponent
+    AjoutcompComponent,
+    AddOrdinateurComponent,
+    ListOrdinateurComponent,
+    DetailOrdinateurComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

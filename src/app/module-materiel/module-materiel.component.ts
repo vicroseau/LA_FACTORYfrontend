@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MaterielService} from './module-materiel.service'
-import {Salle,  Ordinateur, Projecteur} from './materiel';
+import { MaterielService } from './module-materiel.service'
+import { Salle, Ordinateur, Projecteur } from './materiel';
 
 @Component({
   selector: 'app-module-materiel',
@@ -9,43 +9,43 @@ import {Salle,  Ordinateur, Projecteur} from './materiel';
 })
 export class ModuleMaterielComponent implements OnInit {
 
-salles;
-ordinateurs;
-projecteurs;
-selectedSalle: Salle;
-selectedOrdinateur: Ordinateur;
-selectedProjecteur: Projecteur;
+  salles;
+  ordinateurs;
+  projecteurs;
+  selectedSalle: Salle;
+  selectedOrdinateur: Ordinateur;
+  selectedProjecteur: Projecteur;
 
   constructor(private materielService: MaterielService) { }
 
   ngOnInit() {
-  
-this.getSalles();
-this.getOrdinateurs();
-this.getProjecteurs();
+
+    this.getSalles();
+    this.getOrdinateurs();
+    this.getProjecteurs();
   }
-  onSelectSalle(salle: Salle): void{
-    this.selectedSalle=salle;
-    
+  onSelectSalle(salle: Salle): void {
+    this.selectedSalle = salle;
+
   }
-onSelectOrdi(ordinateur: Ordinateur): void{
-    this.selectedOrdinateur=ordinateur;
-    
+  onSelectOrdi(ordinateur: Ordinateur): void {
+    this.selectedOrdinateur = ordinateur;
+
   }
-  onSelectPro(projecteur: Projecteur): void{
-    this.selectedProjecteur=projecteur;
-    
-  } 
-  getSalles(): void{
+  onSelectPro(projecteur: Projecteur): void {
+    this.selectedProjecteur = projecteur;
+
+  }
+  getSalles(): void {
     this.materielService.getSalle()
-        .subscribe(salle => this.salles = salle);
+      .subscribe(salles => this.salles = salles);
   }
-   getOrdinateurs(): void{
+  getOrdinateurs(): void {
     this.materielService.getOrdinateur()
-        .subscribe(ordinateur => this.ordinateurs = ordinateur);
+      .subscribe(ordinateurs => this.ordinateurs = ordinateurs);
   }
-  getProjecteurs(): void{
+  getProjecteurs(): void {
     this.materielService.getProjecteur()
-        .subscribe(projecteur => this.projecteurs = projecteur);
-  } 
+      .subscribe(projecteurs => this.projecteurs = projecteurs);
+  }
 }
