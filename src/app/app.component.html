@@ -1,8 +1,9 @@
+<html>
 
 <div class="container">
-  <h1>
+  <h2>
   Gestionnaire de Formation
-  </h1>
+  </h2>
 
 <div class="gridContainer" *ngIf="!showAll" >
   <div (click)="onSelMtr()">Gestion des Matières</div>
@@ -21,3 +22,5 @@
 <app-module-materiel *ngIf="show2"></app-module-materiel>
 <app-module-restitution *ngIf="show5"></app-module-restitution>
 <router-outlet></router-outlet>
+
+</html>

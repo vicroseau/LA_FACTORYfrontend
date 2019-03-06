@@ -1,22 +1,50 @@
+html { 
+    
+    background:url(https://espace-formation-istres.fr/wp-content/uploads/2017/11/espace-formation_decouverte-ordinateur-750x303.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+  }
+
 div.container{text-align: center;
-
-
-
+   height:100vh;
+   
+    
+}
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 300%;
 }
 
+
 div.gridContainer{
+ 
+    margin: auto;
     display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(3, 2fr);
     grid-gap: 50px;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
+    width: 90vw;
+    height: 90vh
   
 }
 div.gridContainer > div{
-    background-color: aqua;
+    border-radius: 15px 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 150%;
+    line-height: 200px;
+    border-style: solid;
+    border-color: rgb(38, 40, 44);
+    background-color: rgba(115, 214, 214, 0.7);
     
 }
 
+
 div.gridContainer > div:hover{
 cursor: pointer;
-
+background-color:  rgba(115, 214, 214);
 }
