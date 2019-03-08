@@ -1,0 +1,30 @@
+div.gridContainer{
+ margin-left: 15%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+    width: 50vw;
+    height: 30vh;
+  
+}
+div.badge{
+   
+        border-radius: 15px 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 150%;
+        line-height: 200px;
+        border-style: solid;
+        border-color: rgb(38, 40, 44);
+        background-color: rgba(115, 214, 214, 0.7);
+}
+
+
+div.badge:hover{
+    cursor: pointer;
+    background-color:  rgba(115, 214, 214);
+    }
+
+button.btn{
+    margin-bottom: 20px;
+}

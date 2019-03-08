@@ -1,0 +1,10 @@
+<div class="bg-secondary text-white col-md-6 align-middle">
+  <h5>Liste des projecteurs</h5>
+  <div *ngFor="let projo of projecteurs">
+    <a routerLink="/projecteur/detail/{{projo.code}}" style="color:black" class="text-white">
+      <span class="badge badge-dark">{{projo.code}}</span> -> {{ projo.cout }} - {{ projo.isDispo }} -
+      {{ projo.resolution }}</a>
+  </div>
+  <br>
+  <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+</div>

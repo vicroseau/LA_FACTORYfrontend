@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MaterielService } from '../../module-materiel.service';
-import { Ordinateur } from '../../materiel';
+import { Salle } from '../../materiel';
 import { Location } from '@angular/common';
 
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-detail-ordinateur',
-  templateUrl: './detail-ordinateur.component.html',
-  styleUrls: ['./detail-ordinateur.component.css']
+  selector: 'app-detail-salle',
+  templateUrl: './detail-salle.component.html',
+  styleUrls: ['./detail-salle.component.css']
 })
-export class DetailOrdinateurComponent implements OnInit {
+export class DetailSalleComponent implements OnInit {
 
-  ordinateur= new Ordinateur();
+  salle= new Salle();
   submitted = false;
   message: string;
 
@@ -24,20 +24,20 @@ export class DetailOrdinateurComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('code');
-    this.materielService.getOrdinateur(id)
-      .subscribe(ordinateur => this.ordinateur = ordinateur);
+    this.materielService.getSalle(id)
+      .subscribe(salle => this.salle = salle);
   }
 
   update(): void {
     this.submitted = true;
-    this.materielService.updateOrdinateur(this.ordinateur)
-        .subscribe(() => this.message = "Ordinateur : Succes MAJ !");
+    this.materielService.updateSalle(this.salle)
+        .subscribe(() => this.message = "Salle : Succes MAJ !");
   }
  
   delete(): void {
     this.submitted = true;
-    this.materielService.deleteOrdinateur(this.ordinateur)
-        .subscribe(()=> this.message = "Ordinateur : Succes Suppression !");
+    this.materielService.deleteSalle(this.salle)
+        .subscribe(()=> this.message = "Salle : Succes Suppression !");
   }
  
   goBack(): void {

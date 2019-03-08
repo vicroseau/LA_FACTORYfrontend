@@ -7,14 +7,14 @@ export class Salle {
 }
 
  export class Ordinateur {
-  code: number;
+    code: number;
     cout: number;
     isDispo: boolean;
     processeur: string;
     ram: number;
     hdd: number;
     annee: number;
-    stagiaire: string;
+    stagiaire: any;
 
 }
 export class Projecteur {

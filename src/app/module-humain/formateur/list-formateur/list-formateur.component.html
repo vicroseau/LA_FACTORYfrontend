@@ -1,0 +1,11 @@
+<div class="bg-secondary text-white col-md-6 align-middle">
+  <h5>Liste des formateurs</h5>
+  <div *ngFor="let formateur1 of formateurs">
+    <a routerLink="/formateur/detail/{{formateur1.id}}" style="color:black" class="text-white">
+      <span class="badge badge-light ">{{formateur1.id}}</span> -> {{ formateur1.nom }} - {{ formateur1.prenom }} -
+      {{ formateur1.email }} - {{ formateur1.tel }} - {{ formateur1.rue }} - {{ formateur1.ville }} -
+      {{ formateur1.zipcode }}</a>
+  </div>
+  <br>
+  <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+</div>

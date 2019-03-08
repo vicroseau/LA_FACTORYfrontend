@@ -1,0 +1,40 @@
+
+<div [hidden]="submitted" class="bg-secondary text-white col-md-6 align-middle">
+    <form #addProjecteurForm="ngForm" (ngSubmit)="addProjecteur()">
+      <div class="form-group">
+        <label for="cout">Coût</label>
+        <input type="number" class="form-control"  [(ngModel)]="projecteur.cout" name="cout" min="0">
+      </div>
+  
+      <div class="form-group">
+        <label for="isDispo">Disponible</label>
+        <select class="form-control" [(ngModel)]="projecteur.isDispo"  name="isDispo">
+          <option value="true">oui</option>
+          <option value="false">non</option>
+        </select>
+      </div>
+   
+      <div class="form-group">
+        <label for="resolution">Résolution</label>
+        <input type="text" class="form-control"  [(ngModel)]="projecteur.resolution" name="resolution">
+      </div>
+  
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+        <button type="button" class="btn btn-dark" (click)="addProjecteur()" [disabled]="!addProjecteurForm.form.valid">Ajouter</button>
+      </div>
+  
+    </form>
+  </div>
+  
+  <div [hidden]="!submitted" class="bg-secondary text-white col-md-6">
+    <p>Ajout réussi ! -></p>
+   <div class="btn-group btn-group-sm">
+       <button class="btn btn-dark" (click)="goBack()">Back</button>
+       <button class="btn btn-dark" (click)="newProjecteur(); addProjecteurForm.reset()">Continue</button>
+      </div>
+  </div>
+  
+  <br>
+  
+ 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -8,20 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  public showAll: boolean = false;
   
+
   ngOnInit() {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
   }
-onSel(){
-  location.reload();
-
-}
-onSel2() {
- 
-  this.showAll = !this.showAll;
-}
-
  
 }

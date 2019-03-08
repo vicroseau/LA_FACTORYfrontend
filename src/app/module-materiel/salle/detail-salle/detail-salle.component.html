@@ -1,0 +1,38 @@
+<h4><span class="badge badge-light ">{{salle.code}}</span> -> {{ salle.cout }} - {{ salle.isDispo }} -
+  {{ salle.capacite }}</h4>
+<div [hidden]="submitted">
+  <form (ngSubmit)="update()" #detailSalleForm="ngForm">
+    <div class="form-group">
+      <label for="cout">Coût</label>
+      <input type="number" class="form-control" id="cout" [(ngModel)]="salle.cout" name="cout">
+    </div>
+
+    <div class="form-group">
+      <label for="isDispo">Disponible</label>
+      <select class="form-control" [(ngModel)]="salle.isDispo" name="isDispo">
+        <option value="true">oui</option>
+        <option value="false">non</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="capacite">capacite</label>
+      <input type="number" class="form-control" [(ngModel)]="salle.capacite" name="capacite">
+    </div>
+
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+      <button type="button" class="btn btn-dark" (click)="update()"
+        [disabled]="!detailSalleForm.form.valid">Update</button>
+      <button class="btn btn-dark" (click)="delete()">Delete</button>
+    </div>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <p>{{message}}</p>
+  <div class="btn-group btn-group-sm">
+    <button class="btn btn-dark" (click)="goBack()">Back</button>
+  </div>
+</div>

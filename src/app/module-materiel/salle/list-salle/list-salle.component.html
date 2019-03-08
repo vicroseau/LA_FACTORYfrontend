@@ -1,0 +1,10 @@
+<div class="bg-secondary text-white col-md-6 align-middle">
+    <h5>Liste des salles</h5>
+    <div *ngFor="let sallei of salles">
+      <a routerLink="/salle/detail/{{sallei.code}}" style="color:black" class="text-white">
+        <span class="badge badge-dark">{{sallei.code}}</span> -> {{ sallei.cout }} - {{ sallei.isDispo }} -
+        {{ sallei.capacite }}</a>
+    </div>
+    <br>
+    <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+  </div>

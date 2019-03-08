@@ -1,0 +1,38 @@
+<h4><span class="badge badge-light ">{{projecteur.code}}</span> -> {{ projecteur.cout }} - {{ projecteur.isDispo }} -
+  {{ projecteur.resolution }}</h4>
+<div [hidden]="submitted">
+  <form (ngSubmit)="update()" #detailProjecteurForm="ngForm">
+    <div class="form-group">
+      <label for="cout">Coût</label>
+      <input type="number" class="form-control" id="cout" [(ngModel)]="projecteur.cout" name="cout">
+    </div>
+
+    <div class="form-group">
+      <label for="isDispo">Disponible</label>
+      <select class="form-control" [(ngModel)]="projecteur.isDispo" name="isDispo">
+        <option value="true">oui</option>
+        <option value="false">non</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="resolution">Résolution</label>
+      <input type="text" class="form-control" [(ngModel)]="projecteur.resolution" name="resolution">
+    </div>
+
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+      <button type="button" class="btn btn-dark" (click)="update()"
+        [disabled]="!detailProjecteurForm.form.valid">Update</button>
+      <button class="btn btn-dark" (click)="delete()">Delete</button>
+    </div>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <p>{{message}}</p>
+  <div class="btn-group btn-group-sm">
+    <button class="btn btn-dark" (click)="goBack()">Back</button>
+  </div>
+</div>

@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { MaterielService } from '../../module-materiel.service';
-import { Ordinateur } from '../../materiel';
+import { Salle } from '../../materiel';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-add-ordinateur',
-  templateUrl: './add-ordinateur.component.html',
-  styleUrls: ['./add-ordinateur.component.css']
+  selector: 'app-add-salle',
+  templateUrl: './add-salle.component.html',
+  styleUrls: ['./add-salle.component.css']
 })
-export class AddOrdinateurComponent implements OnInit {
+export class AddSalleComponent implements OnInit {
 
-  ordinateur = new Ordinateur();
-  selectedOrdinateur: Ordinateur;
+  salle = new Salle();
+  selectedSalle: Salle;
   submitted = false;
 
   ngOnInit() {
@@ -22,12 +22,12 @@ export class AddOrdinateurComponent implements OnInit {
     private location: Location
   ) { }
 
-  newOrdinateur(): void {
+  newSalle(): void {
     this.submitted = false;
-    this.ordinateur = new Ordinateur();
+    this.salle = new Salle();
   }
 
-  addOrdinateur() {
+  addSalle() {
     this.submitted = true;
     this.save();
   }
@@ -37,7 +37,7 @@ export class AddOrdinateurComponent implements OnInit {
   }
 
   private save(): void {
-    this.materielService.addOrdinateur(this.ordinateur).subscribe();
+    this.materielService.addSalle(this.salle).subscribe();
   }
 
 } 
